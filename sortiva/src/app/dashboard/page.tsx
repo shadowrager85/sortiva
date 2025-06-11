@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/ui/modetoggle";
-
+import { Task } from "@/components/ui/task"
 export default function Dashboard (){
 return (  
 <>
@@ -33,6 +33,10 @@ return (
             <div className="icon mb-2"></div>
             <h1 className="text-2xl font-bold">Learn And Earn</h1>
         </div>
+    </div>
+    <div className="task">
+        <h1>Recent Activity</h1>
+        <Task />
     </div>
     </div>
 </>
