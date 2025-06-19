@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 
-
 const MONGODB_URL = process.env.DATABASE_URL as string;
 
 if (!MONGODB_URL) {

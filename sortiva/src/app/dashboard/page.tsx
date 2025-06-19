@@ -1,9 +1,8 @@
-import { ModeToggle } from "@/components/ui/modetoggle";
-import { Task } from "@/components/ui/task"
+
 export default function Dashboard (){
 return (  
 <>
-<ModeToggle />
+
 <div>
     <h1 className="text-4xl font-semibold">Dashboard</h1>
     <p className="mb-4">Welcome to your dashboard</p>
@@ -36,7 +35,7 @@ return (
     </div>
     <div className="task">
         <h1>Recent Activity</h1>
-        <Task />
+
     </div>
     </div>
 </>

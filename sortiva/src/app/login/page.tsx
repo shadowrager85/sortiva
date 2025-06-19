@@ -1,8 +1,8 @@
-import { ModeToggle } from "@/components/ui/modetoggle";    
+ 
 export default function LoginPage() {
   return (
     <>
-    <ModeToggle />
+
     <div className="login flex flex-col justify-center items-center  w-96 h-96 p-2  ml-96 mt-10">
     <h1 className="text-4xl font-semibold">Welcome</h1>
         <p className="mb-4">Login to your account</p>

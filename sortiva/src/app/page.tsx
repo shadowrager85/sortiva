@@ -1,9 +1,9 @@
-import { ModeToggle } from "@/components/ui/modetoggle";
+
 
 export default function Home() {
   return (
     <>
-      <ModeToggle />
+
       {/* Hero Section */}
       <div className="hero flex flex-row m-4 p-8 ">
         <div className="content left justify-end items-end flex-1 h-96 w-96 m-4 ">
