@@ -24,11 +24,11 @@ return (
 <div className="Quick Actions mb-6">
     <h1 className="mb-2">Quick Actions</h1>
     <div className="flex flex-row space-x-4">
-                <div className="btn flex flex-col flex-1 bg-emerald-400 w-96 h-48 rounded-2xl p-10 m-2 items-center justify-center cursor-pointer hover:scale-105 shadow-2xl transition-all duration-300 hover:shadow-amber-800 ">
+                <div className="btn flex flex-col flex-1 bg-emerald-400 w-96 h-48 rounded-2xl p-10 m-2 items-center justify-center cursor-pointer hover:bg-emerald-800 shadow-2xl transition-all duration-300 hover:shadow-emerald-600 ">
             <div className="icon mb-2"></div>
             <h1 className="text-2xl font-bold">Scan Waste</h1>
         </div>
-                <div className="btn flex flex-col flex-1 bg-emerald-400 w-96 h-48 rounded-2xl p-10 m-2 items-center justify-center cursor-pointer hover:scale-105 shadow-2xl transition-all duration-300 hover:shadow-amber-800 ">
+                <div className="btn flex flex-col flex-1 bg-emerald-400 w-96 h-48 rounded-2xl p-10 m-2 items-center justify-center cursor-pointer hover:bg-emerald-800 shadow-2xl transition-all duration-300 hover:shadow-emerald-600 ">
             <div className="icon mb-2"></div>
             <h1 className="text-2xl font-bold">Learn And Earn</h1>
         </div>
