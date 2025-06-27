@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-//react icons
+// icons
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
@@ -10,6 +10,8 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+//front-end authentication and signup page
 const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
@@ -26,7 +28,7 @@ const SignUp = () => {
     e.preventDefault();
     setPending(true);
 
-    const res = await fetch("/api/auth/signup", {
+    const res = await fetch("/api/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
@@ -57,6 +59,9 @@ const SignUp = () => {
     <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
       <h1 className="text-4xl font-semibold mb-2">Welcome</h1>
       <p className="mb-4">Create an account</p>
+        <div className=" p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
+            <p className="text-red-300 font-bold">{error}</p>
+          </div>
 
       <form
         onSubmit={handleSubmit}
@@ -123,7 +128,7 @@ const SignUp = () => {
         Already have an account?
         <Link
           className="text-sky-700 ml-4 hover:underline cursor-pointer"
-          href="sign-in"
+          href="/login"
         >
           Sign in{" "}
         </Link>
