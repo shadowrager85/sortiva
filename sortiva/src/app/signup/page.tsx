@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 
 //react icons
@@ -7,7 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SignUp = () => {
   const [form, setForm] = useState({
     name: "",
@@ -16,6 +18,7 @@ const SignUp = () => {
     confirmPassword: "",
   });
   const [pending, setPending] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState(null);
   const router = useRouter();
 
@@ -83,6 +86,15 @@ const SignUp = () => {
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
           placeholder="Password"
+            className="border-2 border-gray-300 p-2 rounded"
+          />
+             <input
+          type="password"
+          disabled={pending}
+          value={form.confirmPassword}
+          onChange={(e) => setForm({ ...form, confirmPassword: e.target.value })}
+          placeholder="Confirm Password"
+            className="border-2 border-gray-300 p-2 rounded"
           />
 
           <button type="submit"
@@ -119,3 +131,4 @@ const SignUp = () => {
     </div>
   );
 }
+ export default SignUp;
