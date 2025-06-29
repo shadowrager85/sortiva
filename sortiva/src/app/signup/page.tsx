@@ -9,7 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 
 //front-end authentication and signup page
 const SignUp = () => {
@@ -20,7 +20,6 @@ const SignUp = () => {
     confirmPassword: "",
   });
   const [pending, setPending] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState(null);
   const router = useRouter();
 
@@ -38,7 +37,7 @@ const SignUp = () => {
     if (res.ok) {
       setPending(false);
       toast.success(data.message);
-      router.push("/sign-in");
+      router.push("/signin");
     } else if (res.status === 400) {
       setError(data.message);
       setPending(false);
@@ -53,7 +52,7 @@ const SignUp = () => {
     value: "github" | "google"
   ) => {
     event.preventDefault();
-    signIn(value, { callbackUrl: "/" });
+    signIn(value, { callbackUrl: "/dashboard" });
   };
   return (
     <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
@@ -128,7 +127,7 @@ const SignUp = () => {
         Already have an account?
         <Link
           className="text-sky-700 ml-4 hover:underline cursor-pointer"
-          href="/login"
+          href="/signin"
         >
           Sign in{" "}
         </Link>
