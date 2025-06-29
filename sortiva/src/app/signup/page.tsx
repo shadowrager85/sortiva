@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 
+
 //front-end authentication and signup page
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -110,7 +111,7 @@ const SignUp = () => {
       <div className="flex my-2 justify-evenly mx-auto items-center">
         <button
           disabled={pending}
-              onClick={() => {}}
+          onClick={(e) => handleProvider(e, "google")}
           className="bg-slate-300 hover:bg-slate-400 hover:scale-110 p-2 rounded"
         >
           <FcGoogle className="size-8 left-2.5 top-2.5" />

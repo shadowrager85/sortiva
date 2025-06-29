@@ -1,5 +1,112 @@
-export default  function Learn() {
+"use client";
+import React, { useEffect, useState } from "react";
+
+// Simulated backend API (would be in /api/articles in a real app)
+const fetchArticles = async () => {
+  // Simulate fetching from backend
+  return [
+    {
+      id: 1,
+      title: "What is Environmental Conservation?",
+      content:
+        "Environmental conservation is the protection, preservation, management, or restoration of natural environments and the ecological communities that inhabit them.",
+    },
+    {
+      id: 2,
+      title: "How Sortiva Helps",
+      content:
+        "Sortiva is a platform dedicated to promoting sustainable waste management and recycling, making it easier for communities to reduce their environmental impact.",
+    },
+    {
+      id: 3,
+      title: "Simple Ways to Conserve the Environment",
+      content:
+        "Reduce, reuse, recycle, save energy, and support eco-friendly initiatives in your community.",
+    },
+  ];
+};
+
+type Article = {
+  id: number;
+  title: string;
+  content: string;
+};
+
+const LearnPage: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchArticles().then((data) => {
+      setArticles(data);
+      setLoading(false);
+    });
+  }, []);
+
   return (
-    <><h1>Hi</h1></>
+    <main
+      style={{
+        maxWidth: 800,
+        margin: "2rem auto",
+        padding: "2rem",
+        background: "#f7fafc",
+        borderRadius: 16,
+        boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+        fontFamily: "Segoe UI, Arial, sans-serif",
+      }}
+    >
+      <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "#256029" }}>
+        🌱 Learn More
+      </h1>
+      <p style={{ color: "#444", fontSize: "1.15rem", marginBottom: 32 }}>
+        Explore articles about <b>environmental conservation</b> and how <b>Sortiva</b> is making a difference.
+      </p>
+      {loading ? (
+        <div style={{ textAlign: "center", color: "#888", fontSize: "1.1rem" }}>
+          <span className="loader" style={{
+            display: "inline-block",
+            width: 24,
+            height: 24,
+            border: "3px solid #c3e6cb",
+            borderTop: "3px solid #256029",
+            borderRadius: "50%",
+            animation: "spin 1s linear infinite",
+            marginRight: 8,
+            verticalAlign: "middle"
+          }} />
+          Loading articles...
+          <style>{`
+            @keyframes spin {
+              0% { transform: rotate(0deg);}
+              100% { transform: rotate(360deg);}
+            }
+          `}</style>
+        </div>
+      ) : (
+        <section>
+          {articles.map((article) => (
+            <article
+              key={article.id}
+              style={{
+                background: "#fff",
+                borderRadius: 12,
+                boxShadow: "0 2px 8px rgba(34,139,34,0.06)",
+                marginBottom: "2rem",
+                padding: "1.5rem 1.5rem 1rem 1.5rem",
+                borderLeft: "6px solid #256029",
+                transition: "box-shadow 0.2s",
+              }}
+            >
+              <h2 style={{ color: "#256029", marginBottom: 8, fontSize: "1.35rem" }}>
+                {article.title}
+              </h2>
+              <p style={{ color: "#333", lineHeight: 1.7 }}>{article.content}</p>
+            </article>
+          ))}
+        </section>
+      )}
+    </main>
   );
-}
+};
+
+export default LearnPage;
