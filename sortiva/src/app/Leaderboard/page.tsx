@@ -57,7 +57,7 @@ export default function LeaderboardPage() {
                 maxWidth: 420,
                 margin: "2rem auto",
                 fontFamily: "Inter, sans-serif",
-                background: "#f8fafc",
+                background: "",
                 borderRadius: 16,
                 boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
                 padding: "2rem",
