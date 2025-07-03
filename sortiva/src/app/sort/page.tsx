@@ -41,13 +41,13 @@ export default function SortPage() {
                 maxWidth: 420,
                 margin: "3rem auto",
                 fontFamily: "Inter, sans-serif",
-                background: "#fff",
+                background: "#030c06",
                 borderRadius: 12,
-                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                boxShadow: "0 4px 24px rgba(155, 239, 185, 0.08)",
                 padding: "2.5rem 2rem",
             }}
         >
-            <h1 style={{ textAlign: "center", marginBottom: 24, color: "#2563eb" }}>
+            <h1 style={{ textAlign: "center", marginBottom: 24, color: "#e4f6eb" }}>
                 🗑️ Waste Sorting Helper
             </h1>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
@@ -82,7 +82,7 @@ export default function SortPage() {
                                 flex: 1,
                                 padding: "8px 12px",
                                 borderRadius: 6,
-                                border: "1px solid #d1d5db",
+                                border: "1px solidrgb(58, 126, 227)",
                                 fontSize: 16,
                                 background: "#f9fafb",
                             }}
@@ -93,8 +93,8 @@ export default function SortPage() {
                     type="submit"
                     disabled={!wasteType || loading}
                     style={{
-                        background: "#2563eb",
-                        color: "#fff",
+                        background: "#2ac05c",
+                        color: "#e4f6eb",
                         padding: "10px 0",
                         border: "none",
                         borderRadius: 6,
@@ -102,7 +102,7 @@ export default function SortPage() {
                         fontSize: 17,
                         cursor: loading ? "not-allowed" : "pointer",
                         transition: "background 0.2s",
-                        boxShadow: "0 2px 8px rgba(37,99,235,0.08)",
+                        boxShadow: "0 2px 8px rgba(38, 198, 193, 0.08)",
                     }}
                 >
                     {loading ? "Loading..." : "Get Instructions"}
@@ -115,12 +115,12 @@ export default function SortPage() {
                         padding: "18px 16px",
                         background: "#f1f5f9",
                         borderRadius: 8,
-                        borderLeft: "5px solid #2563eb",
+                        borderLeft: "5px solidrgb(37, 235, 189)",
                         boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
                     }}
                 >
-                    <strong style={{ color: "#2563eb" }}>Disposal Instructions:</strong>
-                    <p style={{ margin: "8px 0 0", color: "#334155", fontSize: 17 }}>{instructions}</p>
+                    <strong style={{ color: "#2ac05c" }}>Disposal Instructions:</strong>
+                    <p style={{ margin: "8px 0 0", color: "#405372", fontSize: 17 }}>{instructions}</p>
                 </div>
             )}
         </main>
