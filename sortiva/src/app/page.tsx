@@ -1,18 +1,20 @@
 import React from "react";
 import Link from 'next/link';
 import Image from 'next/image';
+import  ThemeSwitch  from '@/components/ui/ThemeSwitch';
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-16 md:py-24 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="hero flex flex-col md:flex-row items-center justify-between gap-8 px-4 py-16 md:py-24">
         <div className="flex-1 flex flex-col justify-center items-start max-w-xl">
-          <div className="banner border-2 rounded-2xl mb-4 px-4 py-2 border-green-600 bg-white dark:bg-gray-800 dark:border-green-500 shadow">
-            <p className="text-green-700 dark:text-green-400 font-semibold text-sm">
+          <div className="banner border-2 rounded-2xl mb-4 px-4 py-2 border-green-600  dark:border-green-500 shadow">
+            <p className="text-green-700  font-semibold text-sm">
               Best Waste Management System
             </p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-gray-900 dark:text-white">
+          <ThemeSwitch />
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-gray-900  dark:text-amber-100">
             Empowering Kenya to Recycle Smarter, Live Greener
           </h1>
           <p className="text-lg md:text-2xl mb-6 text-gray-700 dark:text-gray-300">
@@ -80,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="features flex flex-col items-center px-4 py-16 md:py-24 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="features flex flex-col items-center px-4 py-16 md:py-24 ">
         <div className="mb-10 text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
             Discover How Sortiva Transforms Recycling Today
@@ -138,7 +140,7 @@ export default function Home() {
         </div>
       </section>
       {/* Pricing Section */}
-      <section className="pricing py-16 px-4 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="pricing py-16 px-4 ">
         <div className="container mx-auto text-center max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
         Choose Your Plan
@@ -196,7 +198,7 @@ export default function Home() {
         </div>
       </section>
       {/* Testimonials Section */}
-      <section className="testimonial py-16 px-4 bg-white dark:bg-gray-900">
+      <section className="testimonial py-16 px-4">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-green-700 dark:text-green-400">
             What Our Users Say
@@ -209,7 +211,7 @@ export default function Home() {
       </section>
 
       {/* Footer Section */}
-      <footer className="footer py-16 px-4 bg-green-700 dark:bg-green-900 text-white">
+      <footer className="footer py-16 px-4 text-white">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the Sortiva Community</h2>
           <p className="text-lg md:text-xl mb-8">
@@ -231,7 +233,7 @@ export default function Home() {
       </footer>
 
       {/* Contact Section */}
-      <section className="contact py-16 px-4 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="contact py-16 px-4 ">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
             Get in Touch with Us
@@ -251,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="newsletter py-16 px-4 bg-white dark:bg-gray-900">
+      <section className="newsletter py-16 px-4 ">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
             Subscribe to Our Newsletter
@@ -273,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq py-16 px-4 bg-gradient-to-br from-green-50 via-white to-green-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <section className="faq py-16 px-4 ">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
             Frequently Asked Questions
@@ -288,7 +290,7 @@ export default function Home() {
       </section>
 
       {/* Blog Section */}
-      <section className="blog py-16 px-4 bg-white dark:bg-gray-900">
+      <section className="blog py-16 px-4">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-green-700 dark:text-green-400">
             Latest from Our Blog
