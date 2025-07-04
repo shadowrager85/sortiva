@@ -1,6 +1,7 @@
 //imports and icons for the login page
 "use client"
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -8,14 +9,14 @@ import { toast } from "sonner";
 import Link from "next/link";
 
 // Login page authentication
-const SignIn= () => {
+const SignIn = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [pending, setPending] = useState(false);
   const router = useRouter();
   const [error, setError] = useState<string>("");
 
-// Handle form submission
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPending(true);
@@ -41,7 +42,7 @@ const SignIn= () => {
     value: "github" | "google"
   ) => {
     event.preventDefault();
-    signIn(value, { callbackUrl: "/dashboard"});
+    signIn(value, { callbackUrl: "/dashboard" });
   };
   return (
     <>
@@ -85,11 +86,13 @@ const SignIn= () => {
               className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
               <FcGoogle className="mr-2" />
+              Google
             </button>
             <button
               onClick={(e) => handleProvider(e, "github")}
               className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
+              GitHub
             </button>
           </div>
         </div>

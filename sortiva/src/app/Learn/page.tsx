@@ -1,16 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 // Simulated backend API (would be in /api/articles in a real app)
 const fetchArticles = async () => {
   // Simulate fetching from backend
   return [
+    
     {
       id: 1,
       title: "What is Environmental Conservation?",
       content:
         "Environmental conservation is the protection, preservation, management, or restoration of natural environments and the ecological communities that inhabit them.",
     },
+    
     {
       id: 2,
       title: "How Sortiva Helps",
@@ -49,31 +51,31 @@ const LearnPage: React.FC = () => {
         maxWidth: 800,
         margin: "2rem auto",
         padding: "2rem",
-        background: "#f7fafc",
         borderRadius: 16,
         boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-        fontFamily: "Segoe UI, Arial, sans-serif",
+        
       }}
     >
       <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "#256029" }}>
-        🌱 Learn More
+        📖 Learn More
       </h1>
-      <p style={{ color: "#444", fontSize: "1.15rem", marginBottom: 32 }}>
+      <p style={{ color: "rgb(255, 255, 255)", fontSize: "1.15rem", marginBottom: 32 }}>
         Explore articles about <b>environmental conservation</b> and how <b>Sortiva</b> is making a difference.
       </p>
       {loading ? (
-        <div style={{ textAlign: "center", color: "#888", fontSize: "1.1rem" }}>
+        <div style={{ textAlign: "center", color: "rgb(33, 186, 145)", fontSize: "1.1rem" }}>
           <span className="loader" style={{
             display: "inline-block",
             width: 24,
             height: 24,
-            border: "3px solid #c3e6cb",
+            border: "3px solidrgb(117, 133, 159)",
             borderTop: "3px solid #256029",
             borderRadius: "50%",
             animation: "spin 1s linear infinite",
             marginRight: 8,
             verticalAlign: "middle"
           }} />
+  
           Loading articles...
           <style>{`
             @keyframes spin {
@@ -88,19 +90,22 @@ const LearnPage: React.FC = () => {
             <article
               key={article.id}
               style={{
-                background: "#fff",
+                background: " ",
                 borderRadius: 12,
-                boxShadow: "0 2px 8px rgba(34,139,34,0.06)",
+                boxShadow: "0 2px 8px rgba(34, 139, 34, 0.1)",
                 marginBottom: "2rem",
                 padding: "1.5rem 1.5rem 1rem 1.5rem",
-                borderLeft: "6px solid #256029",
+                borderLeft: "6px solid rgba(117, 130, 152)",
                 transition: "box-shadow 0.2s",
               }}
             >
               <h2 style={{ color: "#256029", marginBottom: 8, fontSize: "1.35rem" }}>
                 {article.title}
               </h2>
-              <p style={{ color: "#333", lineHeight: 1.7 }}>{article.content}</p>
+              <p style={{ color: "rgba(117, 130, 152)", lineHeight: 1.7 }}>{article.content}</p>
+              <Link href="/learn-more">
+               <button className="rounded-md px-6 py-3 border-2 border-green-600 text-green-600 dark:text-green-400 bg-white dark:bg-gray-800 hover:bg-green-600 hover:text-white transition w-full sm:w-auto">Learn More</button>
+              </Link>          
             </article>
           ))}
         </section>
