@@ -122,6 +122,7 @@ export default function SortPage() {
                     <strong style={{ color: "#2ac05c" }}>Disposal Instructions:</strong>
                     <p style={{ margin: "8px 0 0", color: "#405372", fontSize: 17 }}>{instructions}</p>
                 </div>
+                
             )}
         </main>
     );
