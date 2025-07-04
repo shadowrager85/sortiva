@@ -77,21 +77,30 @@ const SignIn= () => {
           Login
           </button>
         </form>
-        <div className="flex flex-col items-center mt-4">
+        <div 
+        style={{
+          maxWidth: 800,
+        margin: "2rem auto",
+        padding: "2rem",
+        background: "rgb(255, 255, 255)",
+        borderRadius: 16,
+        boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+            }}
+        >
           <p className="text-gray-500 mb-2">Or login with</p>
           <div className="flex space-x-4">
             <button
               onClick={(e) => handleProvider(e, "google")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
+              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-blue-200 transition"
             >
               <FcGoogle className="mr-2" />
-              Google
+              
             </button>
             <button
               onClick={(e) => handleProvider(e, "github")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
+              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-blue-200 transition"
             >
-              GitHub
+              
             </button>
           </div>
         </div>
