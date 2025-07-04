@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const MONGODB_URL = process.env.MONGO;
 
 if (!MONGODB_URL) {
-  throw new Error('Please define the MONGODB_URL environment variable inside .env.local');
+    throw new Error('Please define the MONGO environment variable (e.g., MONGO) in your .env.local file');
 }
 
 async function connectToDatabase() {

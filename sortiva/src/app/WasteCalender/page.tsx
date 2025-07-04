@@ -41,8 +41,8 @@ export default function WasteCalendar() {
     };
 
     return (
-        <div className="flex flex-col items-center min-h-screen bg-muted py-10">
-            <Card className="w-full max-w-md shadow-lg">
+        <div className="flex flex-col  items-center min-h-screen bg-muted py-10">
+            <Card className="w-full bg-white max-w-md shadow-lg ">
                 <CardHeader>
                     <CardTitle className="text-2xl font-bold text-center">Waste Calendar</CardTitle>
                 </CardHeader>

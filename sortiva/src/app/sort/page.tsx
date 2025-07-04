@@ -38,13 +38,13 @@ export default function SortPage() {
     return (
         <main
             style={{
-                maxWidth: 420,
+                maxWidth: 520,
                 margin: "3rem auto",
                 fontFamily: "Inter, sans-serif",
                 background: "#030c06",
-                borderRadius: 12,
-                boxShadow: "0 4px 24px rgba(155, 239, 185, 0.08)",
-                padding: "2.5rem 2rem",
+                borderRadius: 15,
+                boxShadow: "0 4px 24px rgba(12, 214, 255, 0.08)",
+                padding: "2.0rem 2rem",
             }}
         >
             <h1 style={{ textAlign: "center", marginBottom: 24, color: "#e4f6eb" }}>
@@ -122,6 +122,7 @@ export default function SortPage() {
                     <strong style={{ color: "#2ac05c" }}>Disposal Instructions:</strong>
                     <p style={{ margin: "8px 0 0", color: "#405372", fontSize: 17 }}>{instructions}</p>
                 </div>
+                
             )}
         </main>
     );
