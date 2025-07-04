@@ -25,7 +25,7 @@ const SignIn= () => {
       password,
     });
     if (res?.ok) {
-      router.push("/dashboard");
+      router.push("/Premium");
       toast.success("login successful");
     } else if (res?.status === 401) {
       setError("Invalid Credentials");
@@ -85,13 +85,11 @@ const SignIn= () => {
               className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
               <FcGoogle className="mr-2" />
-              Google
             </button>
             <button
               onClick={(e) => handleProvider(e, "github")}
               className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
-              GitHub
             </button>
           </div>
         </div>

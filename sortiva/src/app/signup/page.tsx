@@ -28,7 +28,7 @@ const SignUp = () => {
     e.preventDefault();
     setPending(true);
 
-    const res = await fetch("/api/signup", {
+    const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
@@ -53,7 +53,7 @@ const SignUp = () => {
     value: "github" | "google"
   ) => {
     event.preventDefault();
-    signIn(value, { callbackUrl: "/dashboard" });
+    signIn(value, { callbackUrl: "/Premium" });
   };
   return (
     <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
