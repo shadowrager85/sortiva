@@ -1,7 +1,11 @@
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
+import Link from "next/link";
 import React from "react";
 
 export default function ContactPage() {
     return (
+    <>
+          <ThemeSwitch />
         <div style={{
             minHeight: "100vh",
             display: "flex",
@@ -83,10 +87,13 @@ export default function ContactPage() {
                             cursor: "pointer"
                         }}
                     >
-                        Send Message
+                        <Link  href="/Thanks" style={{ color: "#fff", textDecoration: "none" }}>
+                            Submit  
+                        </Link>
                     </button>
                 </form>
             </div>
         </div>
+    </>
     );
 }

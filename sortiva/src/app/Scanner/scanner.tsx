@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import * as tmImage from "@teachablemachine/image";
 
 const MODEL_URL = "https://teachablemachine.withgoogle.com/models/CBJCb48V4/";
 
 const DISPOSAL_INSTRUCTIONS: Record<string, string> = {
-  "Plastic": "Dispose in the recycling bin for plastics.",
-  "Paper": "Place in the paper recycling bin.",
-  "Metal": "Recycle in the metals bin.",
-  "Glass": "Recycle in the glass bin.",
-  "Organic": "Compost or dispose in organic waste.",
-  "Other": "Dispose in general waste.",
+  "Plastic": "Recycle plastics in the plastic bin or reuse it to make something new eg toothbrush holder.",
+  " Organic": "Compost organic waste or dispose in the organic bin.",
+   "Electronics": "Take electronics to a special e-waste facility or dispose in the e-waste bin.",
 };
 
 export default function Scanner() {
@@ -138,6 +136,8 @@ export default function Scanner() {
 
   return (
     <div className="flex flex-col items-center">
+             <ThemeSwitch />
+      <h1 className="text-shadow-emerald-400 text-2xl font-bold">Scanner</h1>
       <p className="text-gray-600 mb-4 text-center max-w-lg">
         Scan your waste item for 10 seconds. We&apos;ll identify the type and tell you how to dispose of it responsibly!
       </p>
