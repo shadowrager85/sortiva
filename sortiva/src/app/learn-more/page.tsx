@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import type { NextPage } from "next";
 import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
@@ -57,7 +56,7 @@ const HomePage: NextPage = () => {
 
         <h3 className="text-xl font-medium mt-4 mb-2">2. Understanding Climate Change</h3>
         <p className="mb-4">
-          Climate change isn't just about rising temperatures. It’s about shifting seasons, melting glaciers, stronger storms, and disappearing species. Long-term environmental data helps us understand these complex trends and how they affect people and ecosystems.
+          Climate change isnt just about rising temperatures. It’s about shifting seasons, melting glaciers, stronger storms, and disappearing species. Long-term environmental data helps us understand these complex trends and how they affect people and ecosystems.
         </p>
 
         <h3 className="text-xl font-medium mt-4 mb-2">3. Protecting Biodiversity</h3>
