@@ -1,6 +1,7 @@
 "use client"
 import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React, { useEffect, useState } from "react";
+import User from "@/lib/mongodb";
 
 type User = {
     id: number;
