@@ -88,7 +88,7 @@ const HomePage: NextPage = () => {
         </p>
 
         <p className="mb-8">
-          So take a walk. Look around. Notice the birds, the sky, the soil beneath your feet. Whether you're in a city park or a rural field, your observations matter.
+          So take a walk. Look around. Notice the birds, the sky, the soil beneath your feet. Whether youre in a city park or a rural field, your observations matter.
         </p>
 
         <p className="font-semibold text-green-700 mb-8">
