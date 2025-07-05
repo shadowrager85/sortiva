@@ -1,4 +1,5 @@
 "use client"
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React, { useEffect, useState } from "react";
 
 type User = {
@@ -67,7 +68,8 @@ const StatsPage = () => {
     const totalComments = users.reduce((sum, u) => sum + u.comments, 0);
 
     return (
-        <div style={{ padding: 32, fontFamily: "Segoe UI, Arial, sans-serif", background: "#f7f9fb", minHeight: "100vh" }}>
+        <div style={{ padding: 32, background: "#f7f9fb", minHeight: "100vh" }}>
+            <ThemeSwitch />
             <h1 style={{ fontSize: 32, marginBottom: 8 }}>User Statistics</h1>
             <div style={cardStyle}>
                 <div style={statBox}>

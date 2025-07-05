@@ -1,4 +1,5 @@
 "use client"
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React, { useState } from "react";
 
 // Simulated backend function
@@ -38,7 +39,7 @@ export default function SortPage() {
     return (
         <main
             style={{
-                maxWidth: 420,
+                maxWidth: 520,
                 margin: "3rem auto",
                 fontFamily: "Inter, sans-serif",
                 background: "#030c06",
@@ -48,6 +49,7 @@ export default function SortPage() {
             }}
         >
             <h1 style={{ textAlign: "center", marginBottom: 24, color: "#e4f6eb" }}>
+                <ThemeSwitch />
                 🗑️ Waste Sorting Helper
             </h1>
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 18 }}>

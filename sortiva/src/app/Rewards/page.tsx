@@ -1,4 +1,5 @@
 "use client"
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React from "react";
 
 type Achievement = {
@@ -48,6 +49,7 @@ export default function RewardsPage() {
                 }}
             >
                 <h1 style={{ textAlign: "center", marginBottom: 24, color: "#1e293b" }}>
+                    <ThemeSwitch />
                     🏆 My Achievements
                 </h1>
                 <ul style={{ listStyle: "none", padding: 0 }}>

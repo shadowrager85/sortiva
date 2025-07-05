@@ -6,6 +6,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Link from "next/link";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 // Login page authentication
 const SignIn= () => {
@@ -47,6 +48,7 @@ const SignIn= () => {
     <>
     {/*Frontend*/}
       <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
+        <ThemeSwitch />
         <h1 className="text-4xl font-semibold mb-2">Welcome Back</h1>
         <p className="mb-4">Login to your account</p>
         <div className="p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">

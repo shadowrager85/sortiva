@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 
 
@@ -28,7 +29,7 @@ const SignUp = () => {
     e.preventDefault();
     setPending(true);
 
-    const res = await fetch("/api/signup", {
+    const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
@@ -57,6 +58,7 @@ const SignUp = () => {
   };
   return (
     <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
+      <ThemeSwitch />
       <h1 className="text-4xl font-semibold mb-2">Welcome</h1>
       <p className="mb-4">Create an account</p>
         <div className=" p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">

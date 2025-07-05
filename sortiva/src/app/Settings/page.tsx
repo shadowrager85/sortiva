@@ -1,4 +1,5 @@
 "use client"
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React, { useState, useEffect } from "react";
 
 // src/app/Settings/page.tsx
@@ -94,6 +95,7 @@ export default function SettingsPage() {
             boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
             padding: "2rem"
         }}>
+            <ThemeSwitch />
             <h2 style={{ textAlign: "center", marginBottom: 24 }}>Settings</h2>
             <form
                 onSubmit={e => {

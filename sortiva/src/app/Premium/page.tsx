@@ -3,6 +3,7 @@
 import Link from "next/link";
 import UserProfile from "@/components/ui/user";
 import { SessionProvider } from "next-auth/react";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 
 const rewards = [
@@ -26,9 +27,13 @@ const dailyTasks = [
 export default function PremiumPage() {
     return (
         <>
+        <nav className="">
+
+        </nav>
             <div className="max-w-5xl mx-auto px-4 py-8">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                     <div>
+                        <ThemeSwitch />
                         <h1 className="text-4xl font-semibold">Premium Dashboard</h1>
                         <p className="mb-2 text-gray-600">Welcome to your premium dashboard! Enjoy unlimited access to all features.</p>
                     </div>
@@ -69,7 +74,7 @@ export default function PremiumPage() {
                     </div>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow p-6">
+                <div className="bg-white dark:bg-emerald-200 rounded-2xl m-12 shadow p-6">
                     <h2 className="text-xl font-semibold mb-4">Daily Tasks</h2>
                     <ul>
                         {dailyTasks.map(task => (
@@ -88,7 +93,7 @@ export default function PremiumPage() {
                     </ul>
                 </div>
                 {/* Recent Activity */}
-                <div className="bg-white rounded-2xl shadow p-6">
+                <div className="bg-white dark:bg-emerald-200 rounded-2xl m-12 shadow p-6">
                     <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
                     <ul>
                         {recentTasks.map(task => (
@@ -101,7 +106,7 @@ export default function PremiumPage() {
                 </div>
             </div>
 
-            <div className="mt-8 bg-white rounded-2xl shadow p-6">
+            <div className="mt-8 bg-white dark:bg-emerald-200 rounded-2xl shadow p-6">
                 <h2 className="text-xl font-semibold mb-4">Rewards</h2>
                 <ul>
                     {rewards.map(reward => (

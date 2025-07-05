@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar"; // shadcn calendar
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
+import  ThemeSwitch  from '@/components/ui/ThemeSwitch';
 type WasteEvent = {
     id: number;
     date: string;
@@ -44,6 +44,7 @@ export default function WasteCalendar() {
         <div className="flex flex-col  items-center min-h-screen bg-muted py-10">
             <Card className="w-full bg-white max-w-md shadow-lg ">
                 <CardHeader>
+                    <ThemeSwitch />
                     <CardTitle className="text-2xl font-bold text-center">Waste Calendar</CardTitle>
                 </CardHeader>
                 <CardContent>
