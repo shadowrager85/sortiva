@@ -310,6 +310,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <p>Copyright Sortiva Kenya And Acacia Crest @ 2025</p>
     </>
   );
 }

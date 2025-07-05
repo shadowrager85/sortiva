@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react";
+import User from "@/lib/mongodb";
 
 type User = {
     id: number;

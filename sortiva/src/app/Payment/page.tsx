@@ -35,18 +35,18 @@ export default function PaymentPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      <div className=" shadow-lg rounded-lg p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold text-center mb-6 text-blue-600">Sortiva Premium Payment</h1>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Phone Number (e.g. 2547...)</label>
+          <label className="block font-semibold mb-2 text-black-100">Phone Number (e.g. 2547...)</label>
           <input
             type="tel"
             placeholder="2547XXXXXXXX"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-black-200"
           />
         </div>
 
@@ -56,7 +56,7 @@ export default function PaymentPage() {
             type="number"
             value={amount}
             onChange={(e) => setAmount(Number(e.target.value))}
-            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-black-200"
           />
         </div>
 
