@@ -59,7 +59,7 @@ const LearnPage: React.FC = () => {
       <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "#256029" }}>
         📖 Learn More
       </h1>
-      <p style={{ color: "rgb(255, 255, 255)", fontSize: "1.15rem", marginBottom: 32 }}>
+      <p style={{ color: "rgba(117, 130, 152)", fontSize: "1.15rem", marginBottom: 32 }}>
         Explore articles about <b>environmental conservation</b> and how <b>Sortiva</b> is making a difference.
       </p>
       {loading ? (

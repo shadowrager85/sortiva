@@ -4,7 +4,15 @@ import type { NextPage } from "next";
 
 const HomePage: NextPage = () => {
   return (
-    <div className="min-h-screen bg-green-50 text-gray-800 py-10 px-6">
+    <div className="min-h-screen bg-green-50 text-gray-800 py-10 px-6" style={{
+                background: " #030c06",
+                borderRadius: 12,
+                boxShadow: "0 2px 8px rgba(34, 139, 34, 0.1)",
+                marginBottom: "2rem",
+                padding: "1.5rem 1.5rem 1rem 1.5rem",
+                borderLeft: "6px solid rgba(117, 130, 152)",
+                transition: "box-shadow 0.2s",
+              }}>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-green-700">
           🌍 The Power of Environmental Observation: Why Watching Nature Matters More Than Ever
@@ -85,18 +93,6 @@ const HomePage: NextPage = () => {
         <p className="font-semibold text-green-700 mb-8">
           Because protecting the planet begins with truly seeing it.
         </p>
-          <main style={{
-                background: " #030c06",
-                borderRadius: 12,
-                boxShadow: "0 2px 8px rgba(34, 139, 34, 0.1)",
-                marginBottom: "2rem",
-                padding: "1.5rem 1.5rem 1rem 1.5rem",
-                borderLeft: "6px solid rgba(117, 130, 152)",
-                transition: "box-shadow 0.2s",
-              }}
-            >
-
-          </main>
       </div>
     </div>
   );
