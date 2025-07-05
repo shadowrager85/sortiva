@@ -3,6 +3,7 @@
 import Link from "next/link";
 import UserProfile from "@/components/ui/user";
 import { SessionProvider } from "next-auth/react";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 const recentTasks = [
     { id: 1, title: "Sorted 2kg of Plastic", date: "2024-06-10", status: "Completed" },
@@ -21,6 +22,7 @@ export default function Dashboard() {
         <>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
+                    <ThemeSwitch />
                     <h1 className="text-4xl font-semibold">Dashboard</h1>
                     <p className="mb-2 text-gray-600">Welcome to your dashboard</p>
                 </div>
@@ -30,16 +32,16 @@ export default function Dashboard() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                <div className="card border-2 rounded-2xl p-6 bg-white shadow hover:shadow-emerald-200 transition">
-                    <h2 className="font-bold text-xl mb-2 text-emerald-700">Total Waste Sorted</h2>
+                <div className="card border-2 rounded-2xl p-6 bg-emerald-700 shadow hover:shadow-emerald-200 transition">
+                    <h2 className="font-bold text-xl mb-2 text-emerald-200">Total Waste Sorted</h2>
                     <p className="text-3xl font-bold text-emerald-900">12 kg</p>
                 </div>
-                <div className="card border-2 rounded-2xl p-6 bg-white shadow hover:shadow-emerald-200 transition">
-                    <h2 className="font-bold text-xl mb-2 text-emerald-700">Tasks Completed</h2>
+                <div className="card border-2 rounded-2xl p-6 bg-emerald-700 shadow hover:shadow-emerald-200 transition">
+                    <h2 className="font-bold text-xl mb-2 text-emerald-200">Tasks Completed</h2>
                     <p className="text-3xl font-bold text-emerald-900">8</p>
                 </div>
-                <div className="card border-2 rounded-2xl p-6 bg-white shadow hover:shadow-emerald-200 transition">
-                    <h2 className="font-bold text-xl mb-2 text-emerald-700">Points Earned</h2>
+                <div className="card border-2 rounded-2xl p-6 bg-emerald-700 shadow hover:shadow-emerald-200 transition">
+                    <h2 className="font-bold text-xl mb-2 text-emerald-200">Points Earned</h2>
                     <p className="text-3xl font-bold text-emerald-900">120</p>
                 </div>
             </div>
@@ -74,8 +76,8 @@ export default function Dashboard() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Daily Tasks */}
-                <div className="bg-white rounded-2xl shadow p-6">
-                    <h2 className="text-xl font-semibold mb-4">Daily Tasks</h2>
+                <div className=" dark:bg-emerald-200 rounded-2xl shadow p-6">
+                    <h2 className="text-xl text-emerald-50 text-bold font-semibold mb-4">Daily Tasks</h2>
                     <ul>
                         {dailyTasks.map(task => (
                             <li key={task.id} className="flex items-center mb-3">
@@ -93,7 +95,7 @@ export default function Dashboard() {
                     </ul>
                 </div>
                 {/* Recent Activity */}
-                <div className="bg-white rounded-2xl shadow p-6">
+                <div className="bg-white dark:bg-emerald-200 rounded-2xl shadow p-6">
                     <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
                     <ul>
                         {recentTasks.map(task => (

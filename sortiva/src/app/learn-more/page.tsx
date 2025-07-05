@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { NextPage } from "next";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 const HomePage: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage: NextPage = () => {
               }}>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-green-700">
+          <ThemeSwitch />
           🌍 The Power of Environmental Observation: Why Watching Nature Matters More Than Ever
         </h1>
 

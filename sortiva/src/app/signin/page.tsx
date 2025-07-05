@@ -1,21 +1,23 @@
 //imports and icons for the login page
 "use client"
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 import React, { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Link from "next/link";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 // Login page authentication
-const SignIn= () => {
+const SignIn = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [pending, setPending] = useState(false);
   const router = useRouter();
   const [error, setError] = useState<string>("");
 
-// Handle form submission
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPending(true);
@@ -25,7 +27,7 @@ const SignIn= () => {
       password,
     });
     if (res?.ok) {
-      router.push("/dashboard");
+      router.push("/Premium");
       toast.success("login successful");
     } else if (res?.status === 401) {
       setError("Invalid Credentials");
@@ -41,12 +43,13 @@ const SignIn= () => {
     value: "github" | "google"
   ) => {
     event.preventDefault();
-    signIn(value, { callbackUrl: "/dashboard"});
+    signIn(value, { callbackUrl: "/dashboard" });
   };
   return (
     <>
     {/*Frontend*/}
       <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
+        <ThemeSwitch />
         <h1 className="text-4xl font-semibold mb-2">Welcome Back</h1>
         <p className="mb-4">Login to your account</p>
         <div className="p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
@@ -77,30 +80,21 @@ const SignIn= () => {
           Login
           </button>
         </form>
-        <div 
-        style={{
-          maxWidth: 800,
-        margin: "2rem auto",
-        padding: "2rem",
-        background: "rgb(255, 255, 255)",
-        borderRadius: 16,
-        boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-            }}
-        >
+        <div className="flex flex-col items-center mt-4">
           <p className="text-gray-500 mb-2">Or login with</p>
           <div className="flex space-x-4">
             <button
               onClick={(e) => handleProvider(e, "google")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-blue-200 transition"
+              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
               <FcGoogle className="mr-2" />
-              
+              Google
             </button>
             <button
               onClick={(e) => handleProvider(e, "github")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-blue-200 transition"
+              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
             >
-              
+           <FaGithub className="mr-2" />
             </button>
           </div>
         </div>

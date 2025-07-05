@@ -1,4 +1,5 @@
 "use client"
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import React, { useEffect, useState, FormEvent } from "react";
 
 // Simulated backend (in-memory)
@@ -63,6 +64,7 @@ export default function LeaderboardPage() {
                 padding: "2rem",
             }}
         >
+            <ThemeSwitch />
             <h1
                 style={{
                     textAlign: "center",

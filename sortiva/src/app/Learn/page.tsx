@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import ThemeSwitch from "@/components/ui/ThemeSwitch";
 // Simulated backend API (would be in /api/articles in a real app)
 const fetchArticles = async () => {
   // Simulate fetching from backend
@@ -57,6 +58,7 @@ const LearnPage: React.FC = () => {
       }}
     >
       <h1 style={{ fontSize: "2.5rem", marginBottom: 8, color: "#256029" }}>
+        <ThemeSwitch />
         📖 Learn More
       </h1>
       <p style={{ color: "rgba(117, 130, 152)", fontSize: "1.15rem", marginBottom: 32 }}>
