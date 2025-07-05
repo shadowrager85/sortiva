@@ -246,7 +246,9 @@ export default function Home() {
               Contact Us
             </button>
             <button className="rounded-md px-6 py-3 border-2 border-green-600 text-green-600 dark:text-green-400 bg-white dark:bg-gray-800 hover:bg-green-600 hover:text-white transition w-full sm:w-auto">
-              Follow Us
+              <Link href="/Contact">
+              Contact
+              </Link>
             </button>
           </div>
         </div>
