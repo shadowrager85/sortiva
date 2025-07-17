@@ -4,17 +4,10 @@ import ThemeSwitch from "@/components/ui/ThemeSwitch";
 
 const HomePage: NextPage = () => {
   return (
-    <div className="min-h-screen bg-green-50 text-gray-800 py-10 px-6" style={{
-                background: " #030c06",
-                borderRadius: 12,
-                boxShadow: "0 2px 8px rgba(34, 139, 34, 0.1)",
-                marginBottom: "2rem",
-                padding: "1.5rem 1.5rem 1rem 1.5rem",
-                borderLeft: "6px solid rgba(117, 130, 152)",
-                transition: "box-shadow 0.2s",
-              }}>
+<>
+    <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-green-950 text-gray-100 py-10 px-4 rounded-xl shadow-lg mb-8 border-l-8 border-green-700 transition-shadow duration-200">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6 text-green-700">
+        <h1 className="text-4xl font-bold mb-6 text-green-400 flex items-center gap-3">
           <ThemeSwitch />
           🌍 The Power of Environmental Observation: Why Watching Nature Matters More Than Ever
         </h1>
@@ -27,14 +20,14 @@ const HomePage: NextPage = () => {
           From climate change to biodiversity loss, our world is changing faster than ever before. And to keep up, we must pay attention. Carefully. Consistently. Intentionally.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-green-300">
           🌿 What is Environmental Observation?
         </h2>
         <p className="mb-4">
           Environmental observation is the practice of watching, measuring, and recording changes in the natural world. It can be as sophisticated as satellite monitoring of deforestation, or as simple as a person noting the first day flowers bloom each spring.
         </p>
 
-        <ul className="list-disc list-inside mb-4">
+        <ul className="list-disc list-inside mb-4 space-y-1">
           <li>Temperature and climate trends</li>
           <li>Air and water quality</li>
           <li>Wildlife populations and migration patterns</li>
@@ -46,30 +39,30 @@ const HomePage: NextPage = () => {
           Together, these observations create a big-picture view of our planet’s health.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-green-300">
           🔬 Why It Matters
         </h2>
-        <h3 className="text-xl font-medium mt-4 mb-2">1. Early Warnings of Environmental Threats</h3>
+        <h3 className="text-xl font-medium mt-4 mb-2 text-green-200">1. Early Warnings of Environmental Threats</h3>
         <p className="mb-4">
           Environmental observation helps scientists detect changes early — before they become crises. For example, tracking water levels and temperatures can warn of an upcoming drought or algal bloom that might affect drinking water and food production.
         </p>
 
-        <h3 className="text-xl font-medium mt-4 mb-2">2. Understanding Climate Change</h3>
+        <h3 className="text-xl font-medium mt-4 mb-2 text-green-200">2. Understanding Climate Change</h3>
         <p className="mb-4">
           Climate change isnt just about rising temperatures. It’s about shifting seasons, melting glaciers, stronger storms, and disappearing species. Long-term environmental data helps us understand these complex trends and how they affect people and ecosystems.
         </p>
 
-        <h3 className="text-xl font-medium mt-4 mb-2">3. Protecting Biodiversity</h3>
+        <h3 className="text-xl font-medium mt-4 mb-2 text-green-200">3. Protecting Biodiversity</h3>
         <p className="mb-4">
           By observing changes in plant and animal populations, scientists can identify species at risk. This leads to conservation efforts that help restore habitats, protect endangered animals, and maintain biodiversity.
         </p>
 
-        <h3 className="text-xl font-medium mt-4 mb-2">4. Informing Policy and Action</h3>
+        <h3 className="text-xl font-medium mt-4 mb-2 text-green-200">4. Informing Policy and Action</h3>
         <p className="mb-4">
           Good decisions depend on good data. Environmental observations are the foundation of smart policy-making, helping governments, farmers, businesses, and communities prepare and adapt to changing conditions.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-green-300">
           🧳️ Everyone Can Be an Observer
         </h2>
         <p className="mb-4">
@@ -80,7 +73,7 @@ const HomePage: NextPage = () => {
           By contributing your own observations, you help build a global network of environmental data. And in doing so, you also deepen your connection to the natural world.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4">
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-green-300">
           🌎 A Call to Awareness
         </h2>
         <p className="mb-4">
@@ -91,11 +84,12 @@ const HomePage: NextPage = () => {
           So take a walk. Look around. Notice the birds, the sky, the soil beneath your feet. Whether youre in a city park or a rural field, your observations matter.
         </p>
 
-        <p className="font-semibold text-green-700 mb-8">
+        <p className="font-semibold text-green-400 mb-8">
           Because protecting the planet begins with truly seeing it.
         </p>
       </div>
     </div>
+</>
   );
 };
 

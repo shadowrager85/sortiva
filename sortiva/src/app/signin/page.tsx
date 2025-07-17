@@ -48,62 +48,65 @@ const SignIn = () => {
   return (
     <>
     {/*Frontend*/}
-      <div className="register flex flex-col justify-center items-center w-full max-w-md mx-auto mt-10 p-4">
+      <div className="flex flex-col justify-center items-center w-full max-w-md mx-auto mt-16 px-6 py-8 bg-white dark:bg-gray-900 rounded-xl shadow-lg">
         <ThemeSwitch />
-        <h1 className="text-4xl font-semibold mb-2">Welcome Back</h1>
-        <p className="mb-4">Login to your account</p>
-        <div className="p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive mb-6">
-          <p className="text-red-300 font-bold">{error}</p>
-        </div>
-        <form onSubmit={handleSubmit} className="w-full">
+        <h1 className="text-4xl font-bold mb-2 text-gray-900 dark:text-white">Welcome Back</h1>
+        <p className="mb-6 text-gray-600 dark:text-gray-300">Login to your account</p>
+        {error && (
+          <div className="w-full p-3 rounded-md flex items-center gap-x-2 text-sm bg-red-50 dark:bg-red-900 text-red-600 dark:text-red-300 mb-4 border border-red-200 dark:border-red-700">
+        <p className="font-semibold">{error}</p>
+          </div>
+        )}
+        <form onSubmit={handleSubmit} className="w-full space-y-4">
           <input
-            type="email"
-            disabled={pending}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            className="border-2 border-gray-300 p-2 rounded w-full mb-4"
+        type="email"
+        disabled={pending}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+        className="border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-green-500 transition"
           />
           <input
-            type="password"
-            disabled={pending}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            className="border-2 border-gray-300 p-2 rounded w-full mb-4"
+        type="password"
+        disabled={pending}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        className="border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-3 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-green-500 transition"
           />
           <button
-            type="submit"
-            disabled={pending}
-            className="w-full bg-green-600 text-gray-100 hover:bg-green-700 transition rounded-md px-6 py-3"
+        type="submit"
+        disabled={pending}
+        className="w-full bg-green-600 text-white font-semibold hover:bg-green-700 transition rounded-lg px-6 py-3 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-          Login
+        {pending ? "Logging in..." : "Login"}
           </button>
         </form>
-        <div className="flex flex-col items-center mt-4">
-          <p className="text-gray-500 mb-2">Or login with</p>
+        <div className="flex flex-col items-center mt-6 w-full">
+          <p className="text-gray-500 dark:text-gray-400 mb-3">Or login with</p>
           <div className="flex space-x-4">
-            <button
-              onClick={(e) => handleProvider(e, "google")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
-            >
-              <FcGoogle className="mr-2" />
-              Google
-            </button>
-            <button
-              onClick={(e) => handleProvider(e, "github")}
-              className="flex items-center bg-white border-2 border-gray-300 rounded-md px-4 py-2 hover:bg-gray-100 transition"
-            >
-           <FaGithub className="mr-2" />
-            </button>
+        <button
+          onClick={(e) => handleProvider(e, "google")}
+          className="flex items-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-5 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition shadow"
+        >
+          <FcGoogle className="mr-2 text-xl" />
+          <span className="font-medium text-gray-700 dark:text-gray-200">Google</span>
+        </button>
+        <button
+          onClick={(e) => handleProvider(e, "github")}
+          className="flex items-center bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-5 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition shadow"
+        >
+          <FaGithub className="mr-2 text-xl text-gray-800 dark:text-gray-200" />
+          <span className="font-medium text-gray-700 dark:text-gray-200">GitHub</span>
+        </button>
           </div>
         </div>
-        <div className="mt-4">
-          <p>
-            Dont have an account?
-            <Link href="/signup" className="text-blue-500 hover:underline ml-2">
-              Sign Up
-            </Link>
+        <div className="mt-6 text-center">
+          <p className="text-gray-600 dark:text-gray-400">
+        Dont have an account?
+        <Link href="/signup" className="text-blue-600 dark:text-blue-400 hover:underline ml-2 font-medium">
+          Sign Up
+        </Link>
           </p>
         </div>
       </div>

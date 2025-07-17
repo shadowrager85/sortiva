@@ -4,12 +4,14 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import ThemeSwitch from "@/components/ui/ThemeSwitch";
 import * as tmImage from "@teachablemachine/image";
 
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/CBJCb48V4/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/yCVWVbSOi/";
 
 const DISPOSAL_INSTRUCTIONS: Record<string, string> = {
   "Plastic": "Recycle plastics in the plastic bin or reuse it to make something new eg toothbrush holder.",
   " Organic": "Compost organic waste or dispose in the organic bin.",
-   "Electronics": "Take electronics to a special e-waste facility or dispose in the e-waste bin.",
+  "Electronics": "Take electronics to a special e-waste facility or dispose in the e-waste bin.",
+  "Nothing": "Insert Wase In The Scanner",
+  "Paper": "Recycle paper in the paper bin or reuse it for crafts.",
 };
 
 export default function Scanner() {
@@ -21,7 +23,6 @@ export default function Scanner() {
   const isMounted = useRef(true);
 
   const finishScan = useCallback((predictions: Record<string, number[]>) => {
-    // Find class with highest average probability
     let bestClass = "Other";
     let bestAvg = 0;
     Object.entries(predictions).forEach(([className, probs]) => {
@@ -47,14 +48,13 @@ export default function Scanner() {
       }
       webcamRef.current = null;
     }
-    // Clear the model reference to prevent memory leaks
     modelRef.current = null;
   }, []);
 
   const scanForDuration = useCallback(async (webcam: tmImage.Webcam, seconds: number) => {
     const predictions: Record<string, number[]> = {};
     let elapsed = 0;
-    const interval = 100; // ms
+    const interval = 100;
     const totalTicks = (seconds * 1000) / interval;
 
     const intervalId = setInterval(async () => {
@@ -108,7 +108,6 @@ export default function Scanner() {
     }
     webcamRef.current = webcam;
 
-    // Remove any existing canvas before appending
     const container = document.getElementById("webcam-container");
     if (container) {
       while (container.firstChild) {
@@ -118,7 +117,6 @@ export default function Scanner() {
     }
     await webcam.play();
 
-    // Start scanning for 10 seconds
     scanForDuration(webcam, 10);
   }, [scanForDuration]);
 
@@ -127,7 +125,6 @@ export default function Scanner() {
     if (scanning) {
       initModel();
     }
-    // Cleanup on unmount
     return () => {
       isMounted.current = false;
       stopWebcam();
@@ -135,43 +132,49 @@ export default function Scanner() {
   }, [scanning, initModel, stopWebcam]);
 
   return (
-    <div className="flex flex-col items-center">
-             <ThemeSwitch />
-      <h1 className="text-shadow-emerald-400 text-2xl font-bold">Scanner</h1>
-      <p className="text-gray-600 mb-4 text-center max-w-lg">
-        Scan your waste item for 10 seconds. We&apos;ll identify the type and tell you how to dispose of it responsibly!
+    <>
+        <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 px-4 py-8">
+      <ThemeSwitch />
+      <h1 className="text-3xl font-extrabold text-green-700 mb-2 drop-shadow-lg">Scanner</h1>
+      <p className="text-gray-700 mb-6 text-center max-w-lg font-medium">
+        Scan your waste item for <span className="font-bold text-green-600">10 seconds</span>. We&apos;ll identify the type and tell you how to dispose of it responsibly!
       </p>
       <div
         id="webcam-container"
-        className={`border-4 rounded-xl bg-white shadow-md flex items-center justify-center w-[240px] h-[240px] mb-2 ${scanning ? "border-green-400 animate-pulse" : "border-gray-200"}`}
+        className={`border-4 rounded-2xl bg-white shadow-lg flex items-center justify-center w-[260px] h-[260px] mb-4 transition-all duration-300 ${
+          scanning ? "border-green-400 animate-pulse" : "border-gray-300"
+        }`}
       />
       {scanning && (
-        <div className="w-60 mt-2">
-          <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+        <div className="w-64 mt-2">
+          <div className="h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">
             <div
-              className="h-full bg-green-400 transition-all"
+              className="h-full bg-gradient-to-r from-green-400 to-green-600 transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-xs text-gray-500 mt-1 text-center">{progress}% Scanning...</p>
+          <p className="text-xs text-gray-500 mt-2 text-center font-semibold tracking-wide">{progress}% Scanning...</p>
         </div>
       )}
       <button
-        className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold shadow hover:bg-green-700 transition"
+        className={`px-8 py-3 mt-4 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-xl font-bold shadow-lg hover:scale-105 hover:from-green-600 hover:to-green-800 transition-all duration-200 ${
+          scanning ? "opacity-60 cursor-not-allowed" : ""
+        }`}
         onClick={() => setScanning(true)}
         disabled={scanning}
       >
         {result ? "Scan Again" : "Start Scanning"}
       </button>
       {result && (
-        <div className="mt-6 p-6 bg-white rounded-xl shadow-lg flex flex-col items-center w-full max-w-md">
-          <h2 className="text-xl font-bold text-blue-700 mb-2">
+        <div className="mt-8 p-8 bg-white rounded-2xl shadow-xl flex flex-col items-center w-full max-w-md border border-green-100">
+          <h2 className="text-2xl font-bold text-blue-700 mb-3">
             Detected: <span className="text-green-700">{result.type}</span>
           </h2>
-          <p className="text-gray-700 text-center">{result.instruction}</p>
+          <p className="text-gray-800 text-center font-medium">{result.instruction}</p>
         </div>
       )}
     </div>
+    </>
   );
 }
 
